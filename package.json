@@ -8,7 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "express-session": "^1.17.0",
+    "nedb": "^1.8.0",
     "next": "9.3.4",
+    "next-auth": "^1.12.1",
+    "passport-youtube-v3": "^2.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }
