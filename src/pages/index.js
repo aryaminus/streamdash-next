@@ -1,13 +1,6 @@
 import React from "react";
 import Router from "next/router";
-import Link from "next/link";
 import { NextAuth } from "next-auth/client";
-
-// export async function getStaticProps({}) {
-//   return {
-//     props: {},
-//   };
-// }
 
 export default class extends React.Component {
   static async getInitialProps({ req }) {
