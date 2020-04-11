@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_ENV=development node index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "node index.js"
   },
   "dependencies": {
+    "dotenv-load": "^2.0.0",
     "express-session": "^1.17.0",
     "nedb": "^1.8.0",
     "next": "9.3.4",
