@@ -64,28 +64,26 @@ export default class extends React.Component {
 export class Dashboard extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <p>
-          <Link href="/auth">
-            <a className="btn btn-secondary">Manage Account</a>
-          </Link>
-        </p>
-        <form
-          id="signout"
-          method="post"
-          action="/auth/signout"
-          onSubmit={this.handleSignOutSubmit}
-        >
-          <input
-            name="_csrf"
-            type="hidden"
-            value={this.props.session.csrfToken}
-          />
-          <button type="submit" className="btn btn-outline-secondary">
-            Sign out
-          </button>
-        </form>
-      </React.Fragment>
+      <div className="container">
+        <div className="text-center">
+          <h1 className="display-4 mt-3 mb-3">StreamDash</h1>
+          <form
+            id="signout"
+            method="post"
+            action="/auth/signout"
+            onSubmit={this.handleSignOutSubmit}
+          >
+            <input
+              name="_csrf"
+              type="hidden"
+              value={this.props.session.csrfToken}
+            />
+            <button type="submit" className="btn btn-outline-secondary">
+              Sign out
+            </button>
+          </form>
+        </div>
+      </div>
     );
   }
 }
