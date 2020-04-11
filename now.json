@@ -1,0 +1,14 @@
+{
+  "build": {
+    "env": {
+      "SESSION_SECRET": "@session-secret",
+      "GOOGLE_ID": "@google-id",
+      "GOOGLE_SECRET": "@google-secret"
+    }
+  },
+  "env": {
+    "SESSION_SECRET": "@session-secret",
+    "GOOGLE_ID": "@google-id",
+    "GOOGLE_SECRET": "@google-secret"
+  }
+}
