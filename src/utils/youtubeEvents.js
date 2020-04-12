@@ -19,39 +19,42 @@ export default class YouTube extends EventEmitter {
   }
 
   getLive() {
-    const url =
-      "https://www.googleapis.com/youtube/v3/search" +
-      "?eventType=live" +
-      "&part=id" +
-      `&channelId=${this.id}` +
-      "&type=video" +
-      `&key=${this.key}`;
-    this.request(url, (data) => {
-      this.liveId =
-        data && data.items && data.items[0] && data.items[0].id.videoId;
-      this.getChatId();
-    });
+    // const url =
+    //   "https://www.googleapis.com/youtube/v3/search" +
+    //   "?eventType=live" +
+    //   "&part=id" +
+    //   `&channelId=${this.id}` +
+    //   "&type=video" +
+    //   `&key=${this.key}`;
+    // this.request(url, (data) => {
+    //   this.liveId =
+    //     data && data.items && data.items[0] && data.items[0].id.videoId;
+    //   this.getChatId();
+    // });
+    this.liveId = "AAA";
   }
 
   getChatId() {
-    const url =
-      "https://www.googleapis.com/youtube/v3/videos" +
-      "?part=liveStreamingDetails" +
-      `&id=${this.liveId}` +
-      `&key=${this.key}`;
-    this.request(url, (data) => {
-      this.chatId =
-        data &&
-        data.items &&
-        data.items[0] &&
-        data.items[0].liveStreamingDetails.activeLiveChatId;
-      const actualStartTime =
-        data &&
-        data.items &&
-        data.items[0] &&
-        data.items[0].liveStreamingDetails.actualStartTime;
-      this.emit("ready", actualStartTime);
-    });
+    // const url =
+    //   "https://www.googleapis.com/youtube/v3/videos" +
+    //   "?part=liveStreamingDetails" +
+    //   `&id=${this.liveId}` +
+    //   `&key=${this.key}`;
+    // this.request(url, (data) => {
+    //   this.chatId =
+    //     data &&
+    //     data.items &&
+    //     data.items[0] &&
+    //     data.items[0].liveStreamingDetails.activeLiveChatId;
+    //   const actualStartTime =
+    //     data &&
+    //     data.items &&
+    //     data.items[0] &&
+    //     data.items[0].liveStreamingDetails.actualStartTime;
+    //   this.emit("ready", actualStartTime);
+    // });
+    this.chatId = "BBB";
+    this.emit("ready");
   }
 
   /**
@@ -90,7 +93,7 @@ export default class YouTube extends EventEmitter {
       time = 0;
     this.interval = setInterval(() => this.getChat(), delay);
     this.on("json", (data) => {
-      console.log(data.length, data.items.length)
+      console.log(data.length, data.items.length);
       for (const item of data.items) {
         time = new Date(item.snippet.publishedAt).getTime();
         this.emit("message", item);
