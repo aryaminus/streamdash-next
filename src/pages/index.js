@@ -57,10 +57,12 @@ export default class extends React.Component {
   }
 
   render() {
-    yt.on("ready", () => {
-      console.log("ready!");
-      yt.listen(10000);
-    });
+    // yt.on("ready", () => {
+    //   console.log("ready!");
+    //   yt.listen(10000);
+    // });
+
+    yt.listen(10000);
 
     yt.on("message", (data) => {
       this.setState({ updatedData: data });

@@ -32,6 +32,7 @@ export default class YouTube extends EventEmitter {
     //   this.getChatId();
     // });
     this.liveId = "AAA";
+    this.getChatId();
   }
 
   getChatId() {
@@ -93,7 +94,6 @@ export default class YouTube extends EventEmitter {
       time = 0;
     this.interval = setInterval(() => this.getChat(), delay);
     this.on("json", (data) => {
-      console.log(data.length, data.items.length);
       for (const item of data.items) {
         time = new Date(item.snippet.publishedAt).getTime();
         this.emit("message", item);

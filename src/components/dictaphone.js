@@ -4,6 +4,7 @@ import SpeechRecognition from "react-speech-recognition";
 const Dictaphone = ({
   shownToast,
   transcript,
+  listening,
   setShownToast,
   resetTranscript,
   browserSupportsSpeechRecognition,
@@ -39,7 +40,7 @@ const Dictaphone = ({
 
   return (
     <div>
-      <button onClick={resetTranscript}>Reset</button>
+      {listening && <button onClick={resetTranscript}>Reset  🎤</button>}
       <span>{transcript}</span>
     </div>
   );
