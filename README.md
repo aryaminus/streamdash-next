@@ -1,30 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# <p align="center"> StreamDash</p>
+<p align="center">
+  <img alt="icon" src="https://i.imgur.com/NNUKJ4y.png" width="120" height="120"> 
+</p>
 
-## Getting Started
+Streaming might look like a dream thing but being bombarded by thousands in a minute does feel overwhelming. So, have a plan to make a neat looking dashboard that will be used for real-time analytics.
 
-First, run the development server:
+**Prod**: https://streamdash.xyz/ 🚨 Not Deployed
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+**Dev**: https://streamdash.herokuapp.com/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technical Tools
+- Github Issues and Project
+- Next.js
+- Zeit 🚨 No serverless support
+- Heroku
+- Speech API
+- Styled Components
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## TODO
+- [ ] Use the Speech API to remove the messages after being read by the streamer
+- [ ] Don't rely on Youtube API only, introduce Twitch / Mixer API
+- [ ] Change the Sppech API to Google Speech recognition
+- [ ] Add More analytics dashboard with word cloud for the normal audience
+- [x] Show the author name on the chat message
 
-## Learn More
+## Current problems
+- [ ] Relied just on Next.js with no database connected, just local memory, bound to run out of it
+- [ ] Speech APi is flimsy and slow, try saying `Dash Stop` you will get the point. So make a native app instead to do the task
+- [ ] Add more analytics and a way to check back on the historical data
+- [ ] Show the viewership growth and decline on the basis of timestamp
+- [ ] Maybe just scrape the youtube chat Data from a server? Kept running out of the quota
 
-To learn more about Next.js, take a look at the following resources:
+## Authors
+- <a href="https://github.com/aryaminus" target="_blank">© Sunim Acharya</a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Licensing
+The code in this project is unlicensed.
