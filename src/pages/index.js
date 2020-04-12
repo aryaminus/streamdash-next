@@ -83,7 +83,7 @@ export default class extends React.Component {
             </button>
           </FullScreen>
           <Main>
-            {this.props.session.user ? (
+            {!this.props.session.user ? (
               <Dashboard {...this.props} {...this.state} />
             ) : (
               <>
