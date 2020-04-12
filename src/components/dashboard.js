@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import styled from "styled-components";
 import { NextAuth } from "next-auth/client";
 
+import Dictaphone from "./dictaphone";
+
 import { timeString, timeDiff } from "../utils/time";
 
 const currentTime = new Date();
@@ -11,13 +13,21 @@ const currentTime = new Date();
 export default ({ session, updatedData }) => {
   const [time, setTime] = useState(timeString(timeDiff(currentTime)));
 
+  const [shownToast, setShownToast] = useState(["sc", "sp", "mod"]);
+
   useEffect(() => {
     if (updatedData) {
-      if (updatedData.snippet.superChatDetails) {
+      if (shownToast.includes("sc") && updatedData.snippet.superChatDetails) {
         toast.error(updatedData.snippet.superChatDetails.userComment);
-      } else if (updatedData.authorDetails.isChatSponsor) {
+      } else if (
+        shownToast.includes("sp") &&
+        updatedData.authorDetails.isChatSponsor
+      ) {
         toast.success(updatedData.snippet.displayMessage);
-      } else if (updatedData.authorDetails.isChatModerator) {
+      } else if (
+        shownToast.includes("mod") &&
+        updatedData.authorDetails.isChatModerator
+      ) {
         toast.info(updatedData.snippet.displayMessage);
       } else {
         console.log("Normal text");
@@ -63,6 +73,7 @@ export default ({ session, updatedData }) => {
         </form>
       </SignOut>
       <Time>{time}</Time>
+      <Dictaphone setShownToast={setShownToast} shownToast={shownToast} />
     </>
   );
 };
