@@ -7,7 +7,7 @@ import Dashboard from "../components/dashboard";
 
 import YouTube from "../utils/youtubeEvents";
 
-const yt = new YouTube("UC-8QAzbLcRglXeN_MY9blyw", process.env.GOOGLE_API_KEY);
+const yt = new YouTube("UCbvFlYuA3NsIAkXRNApO-lw", process.env.GOOGLE_API_KEY);
 
 export default class extends React.Component {
   state = {
@@ -57,24 +57,32 @@ export default class extends React.Component {
   }
 
   render() {
-    // yt.on("ready", () => {
-    //   console.log("ready!");
-    //   yt.listen(1000);
-    // });
+    yt.on("ready", () => {
+      console.log("ready!");
+      yt.listen(10000);
+    });
 
-    // yt.on("message", (data) => {
-    //   this.setState({ updatedData: data });
-    // });
+    yt.on("message", (data) => {
+      this.setState({ updatedData: data });
+    });
 
-    // yt.on("error", (error) => {
-    //   console.error(error);
-    // });
+    yt.on("error", (error) => {
+      console.error(error);
+    });
 
     return (
       <Page title="StreamDash">
         <Background />
-        <Grid>
-          <Main id="dash">
+        <Grid id="dash">
+          <FullScreen>
+            <button
+              onClick={this.toggleFullscreen}
+              style={{ backgroundColor: "#ff000059", fontSize: "18px" }}
+            >
+              Full Screen
+            </button>
+          </FullScreen>
+          <Main>
             {this.props.session.user ? (
               <Dashboard {...this.props} {...this.state} />
             ) : (
@@ -85,9 +93,6 @@ export default class extends React.Component {
                 </SignIn>
               </>
             )}
-            <button onClick={this.toggleFullscreen} className="btn" type="button">
-              <span>Full Screen</span>
-            </button>
           </Main>
         </Grid>
       </Page>
@@ -158,6 +163,20 @@ const Background = styled.div`
     );
   background-blend-mode: screen;
   background-size: cover;
+`;
+
+const FullScreen = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 50px;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Grid = styled.div`

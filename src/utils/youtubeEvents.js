@@ -90,18 +90,20 @@ export default class YouTube extends EventEmitter {
       time = 0;
     this.interval = setInterval(() => this.getChat(), delay);
     this.on("json", (data) => {
+      console.log(data.length, data.items.length)
       for (const item of data.items) {
         time = new Date(item.snippet.publishedAt).getTime();
-        if (lastRead < time) {
-          // lastRead = time;
-          /**
-           * Emitted whenever a new message is receipted.
-           * See {@link https://developers.google.com/youtube/v3/live/docs/liveChatMessages#resource|docs}
-           * @event YouTube#message
-           * @type {object}
-           */
-          this.emit("message", item);
-        }
+        this.emit("message", item);
+        // if (lastRead < time) {
+        //   lastRead = time;
+        //   /**
+        //    * Emitted whenever a new message is receipted.
+        //    * See {@link https://developers.google.com/youtube/v3/live/docs/liveChatMessages#resource|docs}
+        //    * @event YouTube#message
+        //    * @type {object}
+        //    */
+        //   this.emit("message", item);
+        // }
       }
     });
   }

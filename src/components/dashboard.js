@@ -12,8 +12,18 @@ export default ({ session, updatedData }) => {
   const [time, setTime] = useState(timeString(timeDiff(currentTime)));
 
   useEffect(() => {
+    if (updatedData) {
+      if (updatedData.snippet.superChatDetails) {
+        toast.error(updatedData.snippet.superChatDetails.userComment);
+      } else if (updatedData.authorDetails.isChatSponsor) {
+        toast.success(updatedData.snippet.displayMessage);
+      } else if (updatedData.authorDetails.isChatModerator) {
+        toast.info(updatedData.snippet.displayMessage);
+      } else {
+        console.log("Normal text");
+      }
+    }
     setTime(timeString(timeDiff(currentTime)));
-
     const timerInterval = setInterval(() => {
       const timeCurrent = timeString(timeDiff(currentTime));
       setTime(timeCurrent);

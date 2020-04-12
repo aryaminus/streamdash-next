@@ -20,7 +20,7 @@ export default {
         authorChannelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         publishedAt: "2020-04-11T17:47:26.949Z",
         hasDisplayContent: true,
-        displayMessage: "@RachitXD kisne mere bhai ko driver bola:RakaRage:",
+        displayMessage: "heelo",
         fanFundingEventDetails: {
           amountMicros: 11111,
           currency: "dummy",
@@ -28,7 +28,7 @@ export default {
           userComment: "dummy",
         },
         textMessageDetails: {
-          messageText: "@RachitXD kisne mere bhai ko driver bola:RakaRage:",
+          messageText: "Hello",
         },
         messageDeletedDetails: {
           deletedMessageId: "dummy",
@@ -86,9 +86,9 @@ export default {
         authorChannelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         publishedAt: "2020-04-11T17:47:26.949Z",
         hasDisplayContent: true,
-        displayMessage: "@RachitXD kisne mere bhai ko driver bola:RakaRage:",
+        displayMessage: "Keep uploading",
         textMessageDetails: {
-          messageText: "@RachitXD kisne mere bhai ko driver bola:RakaRage:",
+          messageText: "Keep uploading",
         },
       },
       authorDetails: {
@@ -101,6 +101,35 @@ export default {
         isChatOwner: false,
         isChatSponsor: true,
         isChatModerator: false,
+      },
+    },
+    {
+      kind: "youtube#liveChatMessage",
+      etag: '"tnVOtk4NeGU6nDncDTE5m9SmuHc/nlEBojXmQYh8wy-d0PgmWRZckhk"',
+      id:
+        "LCC.CjgKDQoLUlMxTWlLWk05M0kqJwoYVUNSal9CVTk1U2ViYVJpMkZ6aVhFb1RnEgtSUzFNaUtaTTkzSRJFChpDUG1IeUl2MzRPZ0NGUXpUZ2dvZHc5MEYtdxInQ0xqbDRxSHk0T2dDRmNKQ2FBb2RyNDRMZ0ExNTg2NjI3MjQ1Mjgz",
+      snippet: {
+        type: "textMessageEvent",
+        liveChatId:
+          "Cg0KC1JTMU1pS1pNOTNJKicKGFVDUmpfQlU5NVNlYmFSaTJGemlYRW9UZxILUlMxTWlLWk05M0k",
+        authorChannelId: "UCQ-Yp607xpeGfANVGdaYvOg",
+        publishedAt: "2020-04-11T17:47:26.949Z",
+        hasDisplayContent: true,
+        displayMessage: "AAA uploading",
+        textMessageDetails: {
+          messageText: "KAAAeep uploading",
+        },
+      },
+      authorDetails: {
+        channelId: "UCQ-Yp607xpeGfANVGdaYvOg",
+        channelUrl: "http://www.youtube.com/channel/UCQ-Yp607xpeGfANVGdaYvOg",
+        displayName: "Raka Ka Naukar",
+        profileImageUrl:
+          "https://yt3.ggpht.com/-27XR6vx8Jvk/AAAAAAAAAAI/AAAAAAAAAAA/AVdhZWKkb1Y/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+        isVerified: false,
+        isChatOwner: false,
+        isChatSponsor: false,
+        isChatModerator: true,
       },
     },
   ],
