@@ -3,6 +3,10 @@ import { NextAuth } from "next-auth/client";
 
 import Dashboard from "../components";
 
+import YouTube from "../utils/youtubeEvents";
+
+const yt = new YouTube("UC-8QAzbLcRglXeN_MY9blyw", process.env.GOOGLE_API_KEY);
+
 export default class extends React.Component {
   static async getInitialProps({ req }) {
     return {
@@ -12,6 +16,19 @@ export default class extends React.Component {
   }
 
   render() {
+    yt.on("ready", () => {
+      console.log("ready!");
+      yt.listen(1000);
+    });
+
+    yt.on("message", (data) => {
+      console.log(data);
+    });
+
+    yt.on("error", (error) => {
+      console.error(error);
+    });
+
     if (this.props.session.user) {
       return <Dashboard {...this.props} />;
     }

@@ -1,18 +1,6 @@
 import Router from "next/router";
 import { NextAuth } from "next-auth/client";
 
-import YouTube from "../utils/youtubeEvents";
-
-// const yt = new YouTube(
-//   process.env.GOOGLE_API_KEY,
-//   "AIzaSyDVHXCesT5Rg8zzztYXaKurVy0fns9KJwo"
-// );
-
-// export async function getServerSideProps(props) {
-//   console.log(props);
-//   return {};
-// }
-
 export default ({ session }) => {
   const handleSignOutSubmit = (event) => {
     event.preventDefault();
@@ -24,19 +12,6 @@ export default ({ session }) => {
         Router.push("/auth/error?action=signout");
       });
   };
-
-  yt.on("ready", () => {
-    console.log("ready!");
-    yt.listen(1000);
-  });
-
-  yt.on("message", (data) => {
-    console.log(data.snippet.displayMessage);
-  });
-
-  yt.on("error", (error) => {
-    console.error(error);
-  });
 
   return (
     <div className="container">
