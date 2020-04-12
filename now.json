@@ -3,12 +3,14 @@
     "env": {
       "SESSION_SECRET": "@session-secret",
       "GOOGLE_ID": "@google-id",
-      "GOOGLE_SECRET": "@google-secret"
+      "GOOGLE_SECRET": "@google-secret",
+      "GOOGLE_API_KEY": "@google-api-key"
     }
   },
   "env": {
     "SESSION_SECRET": "@session-secret",
     "GOOGLE_ID": "@google-id",
-    "GOOGLE_SECRET": "@google-secret"
+    "GOOGLE_SECRET": "@google-secret",
+    "GOOGLE_API_KEY": "@google-api-key"
   }
 }
