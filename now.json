@@ -1,16 +1,16 @@
 {
   "build": {
     "env": {
-      "SESSION_SECRET": "@session-secret",
-      "GOOGLE_ID": "@google-id",
-      "GOOGLE_SECRET": "@google-secret",
-      "GOOGLE_API_KEY": "@google-api-key"
+      "SESSION_SECRET": "@sd-session-secret",
+      "GOOGLE_ID": "@sd-google-id",
+      "GOOGLE_SECRET": "@sd-google-secret",
+      "GOOGLE_API_KEY": "@sd-google-api-key"
     }
   },
   "env": {
-    "SESSION_SECRET": "@session-secret",
-    "GOOGLE_ID": "@google-id",
-    "GOOGLE_SECRET": "@google-secret",
-    "GOOGLE_API_KEY": "@google-api-key"
+    "SESSION_SECRET": "@sd-session-secret",
+    "GOOGLE_ID": "@sd-google-id",
+    "GOOGLE_SECRET": "@sd-google-secret",
+    "GOOGLE_API_KEY": "@sd-google-api-key"
   }
 }

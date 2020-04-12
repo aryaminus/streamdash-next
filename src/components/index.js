@@ -4,7 +4,7 @@ import { NextAuth } from "next-auth/client";
 import YouTube from "../utils/youtubeEvents";
 
 const yt = new YouTube(
-  "UCRj_BU95SebaRi2FziXEoTg",
+  process.env.GOOGLE_API_KEY,
   "AIzaSyDVHXCesT5Rg8zzztYXaKurVy0fns9KJwo"
 );
 
