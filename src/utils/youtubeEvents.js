@@ -1,5 +1,7 @@
 const { EventEmitter } = require("events");
 
+import dummyJson from "./example";
+
 /**
  * The main hub for acquire live chat with the YouTube Date API.
  * @extends {EventEmitter}
@@ -25,7 +27,6 @@ export default class YouTube extends EventEmitter {
       "&type=video" +
       `&key=${this.key}`;
     this.request(url, (data) => {
-      console.log(data, this.id, this.key);
       this.liveId =
         data && data.items && data.items[0] && data.items[0].id.videoId;
       this.getChatId();
@@ -44,7 +45,12 @@ export default class YouTube extends EventEmitter {
         data.items &&
         data.items[0] &&
         data.items[0].liveStreamingDetails.activeLiveChatId;
-      this.emit("ready");
+      const actualStartTime =
+        data &&
+        data.items &&
+        data.items[0] &&
+        data.items[0].liveStreamingDetails.actualStartTime;
+      this.emit("ready", actualStartTime);
     });
   }
 
@@ -54,16 +60,17 @@ export default class YouTube extends EventEmitter {
    * @return {object}
    */
   getChat() {
-    if (!this.chatId) return this.emit("error", "Chat id is invalid.");
-    const url =
-      "https://www.googleapis.com/youtube/v3/liveChat/messages" +
-      `?liveChatId=${this.chatId}` +
-      "&part=id,snippet,authorDetails" +
-      "&maxResults=2000" +
-      `&key=${this.key}`;
-    this.request(url, (data) => {
-      this.emit("json", data);
-    });
+    // if (!this.chatId) return this.emit("error", "Chat id is invalid.");
+    // const url =
+    //   "https://www.googleapis.com/youtube/v3/liveChat/messages" +
+    //   `?liveChatId=${this.chatId}` +
+    //   "&part=id,snippet,authorDetails" +
+    //   "&maxResults=2000" +
+    //   `&key=${this.key}`;
+    // this.request(url, (data) => {
+    //   this.emit("json", data);
+    // });
+    this.emit("json", dummyJson);
   }
 
   request(url, callback) {
@@ -86,9 +93,9 @@ export default class YouTube extends EventEmitter {
       for (const item of data.items) {
         time = new Date(item.snippet.publishedAt).getTime();
         if (lastRead < time) {
-          lastRead = time;
+          // lastRead = time;
           /**
-           * Emitted whenever a new message is recepted.
+           * Emitted whenever a new message is receipted.
            * See {@link https://developers.google.com/youtube/v3/live/docs/liveChatMessages#resource|docs}
            * @event YouTube#message
            * @type {object}

@@ -1,7 +1,7 @@
 import Router from "next/router";
 import { NextAuth } from "next-auth/client";
 
-export default ({ session }) => {
+export default ({ session, updatedData }) => {
   const handleSignOutSubmit = (event) => {
     event.preventDefault();
     NextAuth.signout()

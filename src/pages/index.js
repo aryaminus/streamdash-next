@@ -2,12 +2,15 @@ import React from "react";
 import { NextAuth } from "next-auth/client";
 
 import Dashboard from "../components";
-
 import YouTube from "../utils/youtubeEvents";
 
-// const yt = new YouTube("UC-8QAzbLcRglXeN_MY9blyw", process.env.GOOGLE_API_KEY);
+const yt = new YouTube("UC-8QAzbLcRglXeN_MY9blyw", process.env.GOOGLE_API_KEY);
 
 export default class extends React.Component {
+  state = {
+    updatedData: undefined,
+  };
+
   static async getInitialProps({ req }) {
     return {
       session: await NextAuth.init({ req }),
@@ -15,23 +18,27 @@ export default class extends React.Component {
     };
   }
 
+
   render() {
-    // yt.on("ready", () => {
-    //   console.log("ready!");
-    //   yt.listen(1000);
-    // });
+    yt.on("ready", () => {
+      console.log("ready!");
+      yt.listen(1000);
+    });
 
-    // yt.on("message", (data) => {
-    //   console.log(data);
-    // });
+    yt.on("message", (data) => {
+      this.setState({ updatedData: data });
+    });
 
-    // yt.on("error", (error) => {
-    //   console.error(error);
-    // });
+    yt.on("error", (error) => {
+      console.error(error);
+    });
+
+    console.log(this.state);
 
     if (this.props.session.user) {
-      return <Dashboard {...this.props} />;
+      return <Dashboard {...this.props} {...this.state} />;
     }
+
     return (
       <div className="container">
         <div className="text-center">
