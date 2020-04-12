@@ -18,17 +18,56 @@ export default ({ session, updatedData }) => {
   useEffect(() => {
     if (updatedData) {
       if (shownToast.includes("sc") && updatedData.snippet.superChatDetails) {
-        toast.error(updatedData.snippet.superChatDetails.userComment);
+        toast.error(
+          <div>
+            Super Chat
+            <div>
+              <img
+                src={updatedData.authorDetails.profileImageUrl}
+                height="50"
+                width="50"
+              />
+              <p> {updatedData.authorDetails.displayName}</p>
+            </div>
+            {updatedData.snippet.superChatDetails.userComment}
+          </div>
+        );
       } else if (
         shownToast.includes("sp") &&
         updatedData.authorDetails.isChatSponsor
       ) {
-        toast.success(updatedData.snippet.displayMessage);
+        toast.success(
+          <div>
+            Sponsor Message
+            <div>
+              <img
+                src={updatedData.authorDetails.profileImageUrl}
+                height="50"
+                width="50"
+              />
+              <p> {updatedData.authorDetails.displayName}</p>
+            </div>
+            {updatedData.snippet.displayMessage}
+          </div>
+        );
       } else if (
         shownToast.includes("mod") &&
         updatedData.authorDetails.isChatModerator
       ) {
-        toast.info(updatedData.snippet.displayMessage);
+        toast.info(
+          <div>
+            Moderator Message
+            <div>
+              <img
+                src={updatedData.authorDetails.profileImageUrl}
+                height="50"
+                width="50"
+              />
+              <p> {updatedData.authorDetails.displayName}</p>
+            </div>
+            {updatedData.snippet.displayMessage}
+          </div>
+        );
       } else {
         console.log("Normal text");
       }

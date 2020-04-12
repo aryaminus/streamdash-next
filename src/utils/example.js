@@ -47,7 +47,7 @@ export default {
           amountMicros: 11111,
           currency: "dummy",
           amountDisplayString: "dummy",
-          userComment: "dummy",
+          userComment: "SC Test Message",
           tier: 11111,
         },
         superStickerDetails: {
@@ -65,9 +65,8 @@ export default {
       authorDetails: {
         channelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         channelUrl: "http://www.youtube.com/channel/UCQ-Yp607xpeGfANVGdaYvOg",
-        displayName: "Raka Ka Naukar",
-        profileImageUrl:
-          "https://yt3.ggpht.com/-27XR6vx8Jvk/AAAAAAAAAAI/AAAAAAAAAAA/AVdhZWKkb1Y/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+        displayName: "User C",
+        profileImageUrl: "https://i.imgur.com/NNUKJ4y.png",
         isVerified: false,
         isChatOwner: false,
         isChatSponsor: true,
@@ -86,7 +85,7 @@ export default {
         authorChannelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         publishedAt: "2020-04-11T17:47:26.949Z",
         hasDisplayContent: true,
-        displayMessage: "Keep uploading",
+        displayMessage: "Sponsor Test Message",
         textMessageDetails: {
           messageText: "Keep uploading",
         },
@@ -94,9 +93,8 @@ export default {
       authorDetails: {
         channelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         channelUrl: "http://www.youtube.com/channel/UCQ-Yp607xpeGfANVGdaYvOg",
-        displayName: "Raka Ka Naukar",
-        profileImageUrl:
-          "https://yt3.ggpht.com/-27XR6vx8Jvk/AAAAAAAAAAI/AAAAAAAAAAA/AVdhZWKkb1Y/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+        displayName: "User B",
+        profileImageUrl: "https://i.imgur.com/NNUKJ4y.png",
         isVerified: false,
         isChatOwner: false,
         isChatSponsor: true,
@@ -115,7 +113,7 @@ export default {
         authorChannelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         publishedAt: "2020-04-11T17:47:26.949Z",
         hasDisplayContent: true,
-        displayMessage: "AAA uploading",
+        displayMessage: "Mod Test Message",
         textMessageDetails: {
           messageText: "KAAAeep uploading",
         },
@@ -123,9 +121,8 @@ export default {
       authorDetails: {
         channelId: "UCQ-Yp607xpeGfANVGdaYvOg",
         channelUrl: "http://www.youtube.com/channel/UCQ-Yp607xpeGfANVGdaYvOg",
-        displayName: "Raka Ka Naukar",
-        profileImageUrl:
-          "https://yt3.ggpht.com/-27XR6vx8Jvk/AAAAAAAAAAI/AAAAAAAAAAA/AVdhZWKkb1Y/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+        displayName: "User A",
+        profileImageUrl: "https://i.imgur.com/NNUKJ4y.png",
         isVerified: false,
         isChatOwner: false,
         isChatSponsor: false,

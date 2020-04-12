@@ -85,7 +85,7 @@ export default class extends React.Component {
             </button>
           </FullScreen>
           <Main>
-            {this.props.session.user ? (
+            {!this.props.session.user ? (
               <Dashboard {...this.props} {...this.state} />
             ) : (
               <>
@@ -93,6 +93,12 @@ export default class extends React.Component {
                 <SignIn href={this.props.providers["Google"].signin}>
                   Continue with Google
                 </SignIn>
+                <p>
+                  *Note: Google Login has not been approved yet cause project
+                  was submitted recently. So, you will get the "This app isn't
+                  verified" alert. Go to Advanced and continue. We won't be
+                  accessing any data.
+                </p>
               </>
             )}
           </Main>
