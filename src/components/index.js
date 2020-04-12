@@ -3,10 +3,10 @@ import { NextAuth } from "next-auth/client";
 
 import YouTube from "../utils/youtubeEvents";
 
-const yt = new YouTube(
-  process.env.GOOGLE_API_KEY,
-  "AIzaSyDVHXCesT5Rg8zzztYXaKurVy0fns9KJwo"
-);
+// const yt = new YouTube(
+//   process.env.GOOGLE_API_KEY,
+//   "AIzaSyDVHXCesT5Rg8zzztYXaKurVy0fns9KJwo"
+// );
 
 // export async function getServerSideProps(props) {
 //   console.log(props);
