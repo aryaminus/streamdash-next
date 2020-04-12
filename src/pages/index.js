@@ -18,22 +18,19 @@ export default class extends React.Component {
     };
   }
 
-
   render() {
-    yt.on("ready", () => {
-      console.log("ready!");
-      yt.listen(1000);
-    });
+    // yt.on("ready", () => {
+    //   console.log("ready!");
+    //   yt.listen(1000);
+    // });
 
-    yt.on("message", (data) => {
-      this.setState({ updatedData: data });
-    });
+    // yt.on("message", (data) => {
+    //   this.setState({ updatedData: data });
+    // });
 
-    yt.on("error", (error) => {
-      console.error(error);
-    });
-
-    console.log(this.state);
+    // yt.on("error", (error) => {
+    //   console.error(error);
+    // });
 
     if (this.props.session.user) {
       return <Dashboard {...this.props} {...this.state} />;
