@@ -31,6 +31,9 @@ Streaming might look like a dream thing but being bombarded by thousands in a mi
 - [ ] Show the viewership growth and decline on the basis of timestamp
 - [ ] Maybe just scrape the youtube chat Data from a server? Kept running out of the quota
 
+## Reference
+I forgot where I took design inspiration from, if you know, please open a PR or a ticket.
+
 ## Authors
 - <a href="https://github.com/aryaminus" target="_blank">© Sunim Acharya</a>
 
